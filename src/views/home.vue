@@ -14,7 +14,10 @@
     </div>
     <div class="index-row">
       <div class="title">
-        {{ $t('home.recommendPlaylist') }}
+        <div class="sub_title">
+          {{ $t('home.recommendPlaylist') }} By
+          <img :src="logoUrl" loading="lazy" class="sober" />
+        </div>
         <router-link to="/explore?category=推荐歌单">{{
           $t('home.seeMore')
         }}</router-link>
@@ -100,6 +103,9 @@ export default {
   },
   computed: {
     ...mapState(['settings']),
+    logoUrl() {
+      return 'https://sober.gz.bcebos.com/soberRPMediaLogo.png';
+    },
     byAppleMusic() {
       return byAppleMusic;
     },
@@ -178,11 +184,18 @@ export default {
 .title {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   margin-bottom: 20px;
   font-size: 28px;
   font-weight: 700;
   color: var(--color-text);
+  .sub_title {
+    display: flex;
+    align-items: center;
+    .sober {
+      height: 60px;
+    }
+  }
   a {
     font-size: 13px;
     font-weight: 600;
