@@ -4,6 +4,7 @@
       <Win32Titlebar v-if="enableWin32Titlebar" />
       <LinuxTitlebar v-if="enableLinuxTitlebar" />
       <div class="navigation-buttons">
+        <div class="Logo"> soberRP </div>
         <button-icon @click.native="go('back')"
           ><svg-icon icon-class="arrow-left"
         /></button-icon>
@@ -65,11 +66,11 @@
         <svg-icon icon-class="logout" />
         {{ $t('library.userProfileMenu.logout') }}
       </div>
-      <hr />
-      <div class="item" @click="toGitHub">
+      <!-- <hr /> -->
+      <!-- <div class="item" @click="toGitHub">
         <svg-icon icon-class="github" />
         {{ $t('nav.github') }}
-      </div>
+      </div> -->
     </ContextMenu>
   </div>
 </template>
@@ -219,6 +220,13 @@ nav.has-custom-titlebar {
   }
   button {
     -webkit-app-region: no-drag;
+  }
+  .Logo {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
   }
 }
 @media (max-width: 970px) {
